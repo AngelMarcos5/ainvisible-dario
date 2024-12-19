@@ -83,7 +83,7 @@
         <h1>Con mucho cariño, de tú amigo Invisible</h1>
         <p>
             Hola Darío, te voy a poner a prueba ya que se que te gustan los juegos. Cada regalo está enumerado, y para poder abrir cada uno de ellos tendrás que ir 
-            acertando preguntas relacionadas contigo o con el grupo.  
+            acertando preguntas relacionadas contigo o con el grupo. No contestes la siguiente pregunta sin antes haber abierto el regalo  
             ¿Estás preparado?
         </p>
         <button class="button" onclick="showSection('pregunta1')">¡Empezar!</button>
@@ -201,7 +201,7 @@
             if (userAnswer === correctAnswer.toLowerCase()) {
                 message.textContent = "¡Correcto, puedes abrir el regalo!";
                 message.className = "message correct";
-                setTimeout(() => showSection(nextSectionId), 1000); // Avanzar a la siguiente sección
+                setTimeout(() => showSection(nextSectionId), 6000); // Avanzar a la siguiente sección
             } else {
                 message.textContent = "Incorrecto, intenta de nuevo.";
                 message.className = "message incorrect";

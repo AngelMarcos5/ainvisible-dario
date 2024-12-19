@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amigo Invisible</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: url('Foto2.jpg'); /* Ruta a tu imagen */
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            color: white;
+        }
+        section {
+            display: none;
+            margin: 20px;
+        }
+        section.active {
+            display: block;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-top: 20px;
+            color: #069014;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 20px auto;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        .input-container {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #4a90e2;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #357ab8;
+        }
+        .message {
+            font-size: 1.2em;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .correct {
+            color: #28a745;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <!-- Inicio -->
+    <section id="inicio" class="active">
+        <h1>Con mucho cariño, de tú amigo Invisible</h1>
+        <p>
+            Hola Darío, te voy a poner a prueba ya que se que te gustan los juegos. Cada regalo está enumerado, y para poder abrir cada uno de ellos tendrás que ir 
+            acertando preguntas relacionadas contigo o con el grupo.  
+            ¿Estás preparado?
+        </p>
+        <button class="button" onclick="showSection('pregunta1')">¡Empezar!</button>
+    </section>
+
+    <!-- Pregunta 1 -->
+    <section id="pregunta1">
+        <h1>Pregunta 1</h1>
+        <p>¿Con cuantas chicas te besaste en el último festival al que acudiste?</p>
+        <div class="input-container">
+            <input type="text" id="respuesta1" placeholder="Escribe tu respuesta aquí">
+            <button class="button" onclick="checkAnswer('respuesta1', '3', 'pregunta1-mensaje', 'pregunta2')">Responder</button>
+        </div>
+        <div id="pregunta1-mensaje" class="message"></div>
+        <img src="Foto8.jpg" 
+        alt="Foto chicas" 
+        style="width: 200px; margin-top: 20px;">
+    </section>
+
+    <!-- Pregunta 2 -->
+    <section id="pregunta2">
+        <h1>Pregunta 2</h1>
+        <p>Si te digo Croissant,¿qué bar se te viene a la mente?</p>
+        <div class="input-container">
+            <input type="text" id="respuesta2" placeholder="Escribe tu respuesta aquí">
+            <button class="button" onclick="checkAnswer('respuesta2', 'Be happy', 'pregunta2-mensaje', 'pregunta3')">Responder</button>
+        </div>
+        <div id="pregunta2-mensaje" class="message"></div>
+        <div id="pregunta1-mensaje" class="message"></div>
+        <img src="Foto3.jpg" 
+        alt="Foto grupo" 
+        style="width: 200px; margin-top: 20px;">
+    </section>
+
+    <!-- Pregunta 3 -->
+    <section id="pregunta3">
+         <h1>Pregunta 3</h1>
+         <p>¿Famosa actriz p... que nombró el hermano de uno de los aquí presente?</p>
+         <div class="input-container">
+            <input type="text" id="respuesta3" placeholder="Escribe tu respuesta aquí">
+            <button class="button" onclick="checkAnswer('respuesta3', 'Stone Cold', 'pregunta3-mensaje', 'pregunta4')">Responder</button>
+         </div>
+        <div id="pregunta3-mensaje" class="message"></div>
+        <img src="Foto6.jpg" 
+        alt="Foto pibes" 
+        style="width: 200px; margin-top: 20px;">
+    </section>
+
+    <!-- Pregunta 4 -->
+    <section id="pregunta4">
+        <h1>Pregunta 4</h1>
+        <p>¿De que nacionalidad era la persona con la que te liaste en el viaje a Madrid?</p>
+        <div class="input-container">
+            <input type="text" id="respuesta4" placeholder="Escribe tu respuesta aquí">
+            <button class="button" onclick="checkAnswer('respuesta4', 'Puerto Rico', 'pregunta4-mensaje', 'pregunta5')">Responder</button>
+        </div>
+        <div id="pregunta4-mensaje" class="message"></div>
+        <img src="Foto5.jpg" 
+        alt="Darío y chica" 
+        style="width: 200px; margin-top: 20px;">
+    </section>
+   
+    <!-- Pregunta 5 -->
+    <section id="pregunta5">
+        <h1>Pregunta 5</h1>
+        <p>¿Qué persona llevó dos garrafas de agua de 8 litros a su primera cita?</p>
+        <div class="input-container">
+           <input type="text" id="respuesta5" placeholder="Escribe tu respuesta aquí">
+           <button class="button" onclick="checkAnswer('respuesta5', 'Isaac', 'pregunta5-mensaje', 'pregunta6')">Responder</button>
+        </div>
+       <div id="pregunta5-mensaje" class="message"></div>
+       <img src="Foto7.jpg" 
+       alt="Foto chicos" 
+       style="width: 200px; margin-top: 20px;">
+   </section>
+
+    <!-- Pregunta 6 -->
+    <section id="pregunta6">
+        <h1>Pregunta 6</h1>
+        <p> Juegas a pádel con la derecha, escribes con la derecha, eres de derecha, o eso creo, pero hay algo que te gusta más hacerlo con la izquierda, ¿el qué? Explícaselo también a los demás porque lo haces </p>
+        <div class="input-container">
+           <input type="text" id="respuesta6" placeholder="Escribe tu respuesta aquí">
+           <button class="button" onclick="checkAnswer('respuesta6', 'Las pajas', 'pregunta6-mensaje', 'final')">Responder</button>
+        </div>
+       <div id="pregunta6-mensaje" class="message"></div>
+       <img src="Foto4.jpg" 
+       alt="Foto Darío" 
+       style="width: 200px; margin-top: 20px;">
+   </section>
+
+
+    <!-- Final -->
+    <section id="final">
+        <h1>¡Felicidades, Darío!</h1>
+        <p>Has completado el cuestionario y desbloqueado el último regalo. ¡Espero que te guste la sorpresa, aunque todos sabemos que no te hace falta... ¿o sí?</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_Morocco.svg" 
+            alt="Bandera de Marruecos" 
+            style="width: 150px; margin-top: 20px;">
+
+    </section>
+
+    <script>
+        // Función para mostrar una sección y ocultar las demás
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        // Función para verificar la respuesta
+        function checkAnswer(inputId, correctAnswer, messageId, nextSectionId) {
+            const userAnswer = document.getElementById(inputId).value.trim().toLowerCase();
+            const message = document.getElementById(messageId);
+            if (userAnswer === correctAnswer.toLowerCase()) {
+                message.textContent = "¡Correcto!";
+                message.className = "message correct";
+                setTimeout(() => showSection(nextSectionId), 1000); // Avanzar a la siguiente sección
+            } else {
+                message.textContent = "Incorrecto, intenta de nuevo.";
+                message.className = "message incorrect";
+            }
+        }
+    </script>
+</body>
+</html>
+
+

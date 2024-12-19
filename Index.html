@@ -15,6 +15,7 @@
             background-position: center center;
             background-attachment: fixed;
             color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
         section {
             display: none;
@@ -24,15 +25,18 @@
             display: block;
         }
         h1 {
-            font-size: 2.5em;
+            font-size: 2.8em;
             margin-top: 20px;
-            color: #069014;
+            color: #ffffff; /* Blanco puro */
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.9); /* Sombra para resaltar */
         }
         p {
-            font-size: 1.2em;
+            font-size: 1.3em;
             margin: 20px auto;
             max-width: 600px;
-            line-height: 1.6;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9); /* Blanco con opacidad */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra para legibilidad */
         }
         .input-container {
             margin-top: 20px;
@@ -50,14 +54,15 @@
             padding: 10px 20px;
             font-size: 1.2em;
             color: #fff;
-            background-color: #4a90e2;
+            background-color: #007bff; /* Azul cielo */
             border: none;
             border-radius: 5px;
             text-decoration: none;
             cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Sombra */
         }
         .button:hover {
-            background-color: #357ab8;
+            background-color: #0056b3; /* Azul más oscuro */
         }
         .message {
             font-size: 1.2em;
@@ -173,7 +178,7 @@
     <!-- Final -->
     <section id="final">
         <h1>¡Felicidades, Darío!</h1>
-        <p>Has completado el cuestionario y desbloqueado el último regalo. ¡Espero que te guste la sorpresa, aunque todos sabemos que no te hace falta... ¿o sí?</p>
+        <p>Has completado el cuestionario y desbloqueado el último regalo. ¡Espero que te guste la última sorpresa, aunque todos sabemos que no te hace falta... ¿o sí?</p>
         <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_Morocco.svg" 
             alt="Bandera de Marruecos" 
             style="width: 150px; margin-top: 20px;">
@@ -194,7 +199,7 @@
             const userAnswer = document.getElementById(inputId).value.trim().toLowerCase();
             const message = document.getElementById(messageId);
             if (userAnswer === correctAnswer.toLowerCase()) {
-                message.textContent = "¡Correcto!";
+                message.textContent = "¡Correcto, puedes abrir el regalo!";
                 message.className = "message correct";
                 setTimeout(() => showSection(nextSectionId), 1000); // Avanzar a la siguiente sección
             } else {
